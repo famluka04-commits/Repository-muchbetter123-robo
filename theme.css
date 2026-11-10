@@ -1,0 +1,23 @@
+/* Choose paper, sage, or night in content.js.
+   Adjust these variables to create your own palette. */
+:root, :root[data-theme="paper"] {
+  --background: #f4f1e9;
+  --surface: #eae6dc;
+  --text: #24251f;
+  --muted: #64645b;
+  --accent: #b83c20;
+  --line: #d2cfc5;
+  --art: #d8ddc9;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --content-width: 1320px;
+  --corner-radius: 4px;
+}
+:root[data-theme="sage"] {
+  --background: #edf0e6; --surface: #dfe5d5; --text: #23382c;
+  --muted: #53634e; --accent: #386143; --line: #c4cebb; --art: #d0d9b9;
+}
+:root[data-theme="night"] {
+  --background: #191a20; --surface: #24252e; --text: #f3eee7;
+  --muted: #b3aebf; --accent: #c7b2ff; --line: #41414d; --art: #323342;
+}

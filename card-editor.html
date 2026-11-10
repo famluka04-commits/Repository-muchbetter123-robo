@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Portfolio card editor</title><link rel="stylesheet" href="./theme.css"><link rel="stylesheet" href="./css/card-editor.css"><script defer src="./content.js"></script><script defer src="./js/card-editor.js"></script></head>
+<body>
+  <main class="editor-wrap">
+    <header><span class="eyebrow">YOUR PORTFOLIO / CARD EDITOR</span><h1>More work.<br><em>Less code.</em></h1><p>Add, duplicate, and edit your showcase cards here. Your public portfolio stays unchanged until you replace its content file.</p><a href="./index.html" target="_blank" rel="noopener">Open portfolio ↗</a></header>
+    <div class="instructions"><strong>1. Edit your cards</strong><span>2. Download content.js</span><span>3. Replace the original file and refresh</span></div>
+    <div class="editor-layout">
+      <section class="card-list-panel" aria-label="Your cards"><div class="panel-heading"><h2>Your cards <span id="card-count"></span></h2><button id="add-card" class="primary" type="button">+ Add card</button></div><div id="card-list"></div><button id="download" class="primary download" type="button">Download content.js ↓</button><p class="help">Keeps the name, theme, Discord details, and other settings from the content.js loaded with this editor. Downloaded edits are not automatically saved into your folder.</p><p id="status" role="status"></p></section>
+      <section class="form-panel" aria-labelledby="form-title"><h2 id="form-title">Edit card</h2>
+        <form id="card-form" autocomplete="off">
+          <label>Project title <input name="title" maxlength="120" required placeholder="My community server"></label>
+          <div class="field-row"><label>Category <input name="category" list="category-options" maxlength="80" placeholder="Server setups"></label><label>Status <input name="status" maxlength="60" placeholder="Completed"></label></div>
+          <datalist id="category-options"><option value="Server setups"><option value="Discord bots"><option value="Design & graphics"></datalist>
+          <label>Description <textarea name="description" rows="3" maxlength="1000" placeholder="What did you create?"></textarea></label>
+          <label>Screenshot path or image URL <input name="image" placeholder="./assets/images/my-project.png"></label><p class="help">Put the screenshot in assets/images first, then enter its filename here. Leave blank for a placeholder. This editor does not copy image files.</p>
+          <label>Image description <input name="imageAlt" maxlength="250" placeholder="Describe the screenshot for screen readers"></label>
+          <div class="field-row"><label>Community / client <input name="client" maxlength="120" placeholder="My community"></label><label>Your role <input name="role" maxlength="120" placeholder="Bot developer"></label></div>
+          <label>Tags, separated by commas <input name="tags" placeholder="Moderation, Tickets, Automation"></label>
+          <details><summary>Optional links & details</summary><label>Project or case study URL <input name="liveUrl" type="url" placeholder="https://example.com/my-project"></label><label>Project button text <input name="linkLabel" maxlength="80" placeholder="View showcase ↗"></label><label>Discord invite URL <input name="discordUrl" type="url" placeholder="https://discord.gg/YOUR_INVITE"></label><label>Source code URL <input name="sourceUrl" type="url" placeholder="https://github.com/you/project"></label><label>Year <input name="year" maxlength="20" placeholder="2026"></label></details>
+          <p class="help">Changes update the draft as you type. Empty links hide their buttons.</p><div class="actions"><button id="duplicate-card" type="button">Duplicate this card</button><button id="delete-card" class="danger" type="button">Remove card</button></div>
+        </form><p id="empty-state" hidden>No cards yet. Choose “Add card” to get started.</p>
+      </section>
+    </div>
+  </main>
+</body></html>
